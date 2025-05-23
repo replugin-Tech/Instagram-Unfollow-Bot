@@ -1,31 +1,31 @@
-# Instagram Unfollow Bot
+Instagram Unfollow Bot
 
-> A stealthy Instagram unfollow bot with day/night mode, UI controls, and JSON user input support.  
-> Includes an easy way to get your unfollow list of users not following you back.
+A stealthy Instagram unfollow bot with day/night mode, UI controls, and JSON user input support. Includes an easy way to get your unfollow list of users not following you back.
 
----
+🚀 Features
 
-## Features
+Automatically unfollow users from a JSON list
 
-- Automatically unfollow users from a JSON list  
-- Day and night modes with adjustable delays and cooldowns  
-- UI with progress, stop & restart controls  
-- Paste your user list directly in the UI as JSON  
-- Helpful instructions on how to generate your unfollow JSON file  
+Day and night modes with adjustable delays and cooldowns
 
----
+UI with progress, stop & restart controls
 
-## Getting Your Unfollow List (Users Not Following You Back)
+Paste your user list directly in the UI as JSON
 
-1. **Log in to Instagram on desktop.**
+Helpful instructions on how to generate your unfollow JSON file
 
-2. Open Developer Console:  
-   - Windows/Linux: `Ctrl + Shift + J`  
-   - Mac: `Cmd + Option + I`
+📤 Getting Your Unfollow List (Users Not Following You Back)
+
+1. Log in to Instagram on desktop.
+
+2. Open Developer Console:
+
+Windows/Linux: Ctrl + Shift + J
+
+Mac: Cmd + Option + I
 
 3. Paste this code into the console and press Enter:
 
-```js
 function getCookie(b){let c=`; ${document.cookie}`,a=c.split(`; ${b}=`);if(2===a.length)return a.pop().split(";").shift()}
 function sleep(a){return new Promise(b=>{setTimeout(b,a)})}
 function afterUrlGenerator(a){return`https://www.instagram.com/graphql/query/?query_hash=3dec7e2c57367ef3da3d987d89f9dbc8&variables={"id":"${ds_user_id}","include_reel":"true","fetch_mutual":"false","first":"24","after":"${a}"}`}
@@ -44,7 +44,7 @@ async function startScript(){
       a.node.follows_viewer||filteredList.push(a.node)
     })
     console.clear()
-    console.log(`%c Progress ${getUnfollowCounter}/${followedPeople} (${parseInt(100*(getUnfollowCounter/followedPeople))}%)`,"background: #222; color: #bada55;font-size: 35px;")
+    console.log(`%c Progress ${getUnfollowCounter}/${followedPeople} (${parseInt(100*(getUnfollowCounter/followedPeople))}%)`,`background: #222; color: #bada55;font-size: 35px;`)
     console.log("%c This users don't follow you (Still in progress)","background: #222; color: #FC4119;font-size: 13px;")
     filteredList.forEach(a=>{console.log(a.username)})
     await sleep(Math.floor(400*Math.random())+1000)
@@ -66,28 +66,31 @@ async function startScript(){
   console.log("%c All DONE!","background: #222; color: #bada55;font-size: 25px;");
 }
 startScript()
+
 4. Wait for the script to finish. It will download a file called usersNotFollowingBack.json.
 
-5. Upload that JSON file to https://43t6lx.csb.app/ and fliter/select the users you want to unfollow.
+5. Upload that JSON file to https://43t6lx.csb.app/ and filter/select the users you want to unfollow.
 
-1. How to Use the Unfollow Bot
-2. Open your browser console on Instagram (where you want to run the script).
+⚙️ How to Use the Unfollow Bot
 
-3. Paste the bot script (the main script with the UI and controls).
+Open your browser console on Instagram (where you want to run the script).
 
-4. You’ll see two popup boxes:
+Paste the bot script (the main script with the UI and controls).
 
-5. User JSON Input: Paste your filtered JSON list here (the one from the GUI tool).
+You’ll see two popup boxes:
 
-6. Username List Textarea: Displays parsed usernames for quick review.
+User JSON Input: Paste your filtered JSON list here (the one from the GUI tool).
 
-7. Click Start in the bot UI. The bot will:
+Username List Textarea: Displays parsed usernames for quick review.
 
-8. Unfollow users one by one with delays based on day/night mode.
+Click Start in the bot UI. The bot will:
 
-9. Show progress, let you stop or restart anytime.
+Unfollow users one by one with delays based on day/night mode.
 
-**Important Notes**
+Show progress, let you stop or restart anytime.
+
+🧠 Important Notes
+
 The bot respects Instagram’s limits with cooldowns, but use responsibly.
 
 Always backup your user list in localStorage — the bot does this automatically.
@@ -98,9 +101,18 @@ If the bot stops unexpectedly, just restart it — it will resume from last prog
 
 You can customize the UI styles and bot behavior in the code.
 
-How to Edit
-To update your list of users, either paste new JSON in the input box or update localStorage key emergencyBackupList manually.
+🔧 How to Edit
 
-To change timing or cooldown, edit the delay values inside the startUnfollow function under day/night modes.
+Update your list of users:
 
-To customize UI, edit the createUI() and related UI update functions.
+Paste new JSON in the input box, or
+
+Update the emergencyBackupList key in localStorage manually.
+
+Change timing/cooldown:
+
+Edit the delay values inside the startUnfollow() function under day/night modes.
+
+Customize UI:
+
+Edit createUI() and related UI update functions.
