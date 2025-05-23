@@ -66,27 +66,28 @@ async function startScript(){
   console.log("%c All DONE!","background: #222; color: #bada55;font-size: 25px;");
 }
 startScript()
-Wait for the script to finish. It will download a file called usersNotFollowingBack.json.
+4. Wait for the script to finish. It will download a file called usersNotFollowingBack.json.
 
-Upload that JSON file to https://43t6lx.csb.app/ and fliter/select the users you want to unfollow.
-How to Use the Unfollow Bot
-Open your browser console on Instagram (where you want to run the script).
+5. Upload that JSON file to https://43t6lx.csb.app/ and fliter/select the users you want to unfollow.
 
-Paste the bot script (the main script with the UI and controls).
+1. How to Use the Unfollow Bot
+2. Open your browser console on Instagram (where you want to run the script).
 
-You’ll see two popup boxes:
+3. Paste the bot script (the main script with the UI and controls).
 
-User JSON Input: Paste your filtered JSON list here (the one from the GUI tool).
+4. You’ll see two popup boxes:
 
-Username List Textarea: Displays parsed usernames for quick review.
+5. User JSON Input: Paste your filtered JSON list here (the one from the GUI tool).
 
-Click Start in the bot UI. The bot will:
+6. Username List Textarea: Displays parsed usernames for quick review.
 
-Unfollow users one by one with delays based on day/night mode.
+7. Click Start in the bot UI. The bot will:
 
-Show progress, let you stop or restart anytime.
+8. Unfollow users one by one with delays based on day/night mode.
 
-Important Notes
+9. Show progress, let you stop or restart anytime.
+
+**Important Notes**
 The bot respects Instagram’s limits with cooldowns, but use responsibly.
 
 Always backup your user list in localStorage — the bot does this automatically.
